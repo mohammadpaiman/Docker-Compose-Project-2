@@ -3,22 +3,24 @@
 **Application:** Uptime Kuma
 **Project:** Docker Compose – Project 2
 
+**Author**: Mohammad Faqirzada
+
 ## Overview
 
-This documentation explains how to deploy **Uptime Kuma**, a self-hosted monitoring tool, using **Docker Compose**. The steps cover setting up the project directory, defining environment variables, creating the Docker Compose configuration, starting the service, and verifying that it is running correctly.
+This documentation explains how I  deployed **Uptime Kuma**, a self-hosted monitoring tool, using **Docker Compose**. The steps cover setting up the project directory, defining environment variables, creating the Docker Compose configuration, starting the service, and verifying that it is running correctly.
 
 ---
 
 ## Step 1: Prepare the Project Folder
 
-1. Ensure Docker and Docker Compose are installed on your system.
-2. Open a terminal window.
-3. Create a new directory for the deployment:
+1. I  Ensured Docker and Docker Compose are installed on my system.
+2. Opened a terminal window.
+3. Created a new directory for the deployment:
 
    ```
    mkdir kuma-monitoring-project
    ```
-4. Move into the newly created directory:
+4. Moved into the newly created directory:
 
    
    cd kuma-monitoring-project
@@ -34,12 +36,12 @@ To make the configuration easier to manage, an environment file is used.
    
    nano .env
    
-2. Add the following line to specify the external port:
+2. Added the following line to specify the external port:
 
    
    KUMA_PORT=3002
    
-3. Save the file and exit the editor.
+3. Saved the file and exit the editor.
 
 This approach allows the port number to be changed later without editing the Docker Compose file directly.
 
@@ -47,12 +49,12 @@ This approach allows the port number to be changed later without editing the Doc
 
 ## Step 3: Create the Docker Compose Configuration
 
-1. Create the `docker-compose.yml` file:
+1. Created the `docker-compose.yml` file:
 
    ```
    nano docker-compose.yml
    ```
-2. Insert the configuration below:
+2. Inserted the configuration below:
 
    ```yaml
    version: "3.9"
@@ -70,7 +72,7 @@ This approach allows the port number to be changed later without editing the Doc
    volumes:
      kuma-data:
    ```
-3. Save the file and exit.
+3. Saved the file and exit.
 
 This configuration:
 
@@ -83,7 +85,7 @@ This configuration:
 
 ## Step 4: Start the Application
 
-Deploy the service in detached mode by running:
+Deployed the service in detached mode by running:
 
 
 docker compose up -d
@@ -113,7 +115,7 @@ After deployment, confirm that everything is working as expected.
 
    The service should appear as running with the correct port mapping.
 
-3. **Verify the volume was created:**
+3. **Verified the volume was created:**
 
    ```
    docker volume ls | grep kuma-data
@@ -125,13 +127,10 @@ After deployment, confirm that everything is working as expected.
 
 ## Step 6: Access the Web Interface
 
-Open a web browser and navigate to:
+Opened a web browser and navigate to:
 
 
 http://localhost:3002
-
-
-You should see the Uptime Kuma dashboard, where monitors can be created and managed.
 
 
 
@@ -139,5 +138,3 @@ You should see the Uptime Kuma dashboard, where monitors can be created and mana
 
 This deployment demonstrates how Docker Compose can be used to quickly and reliably run a monitoring service. By separating configuration into environment variables and using persistent volumes, the setup is flexible, maintainable, and suitable for long-term use.
 
-* Rewrite it to sound **more advanced / professional**
-* Format it for **GitHub Pages (Markdown)** or **Word (.docx)**
